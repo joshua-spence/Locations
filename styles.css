@@ -7,6 +7,23 @@ body{
     padding: 1em;
 }
 
+.search-box{
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 50px;
+    border: solid black;
+    outline: none;
+}
+
+.form-input{
+    position: relative;
+    margin: 0 auto;
+    width: 400px;
+    
+}
+
+
+/* 
 .home-categories-wrapper{
     display: grid;
     grid-template-columns: repeat(4, 100px);
@@ -20,7 +37,7 @@ body{
     
 }
 
-.search-bar{
+.form-group{
     grid-column: 1/5;
     grid-row: 1;
 }
@@ -71,4 +88,6 @@ body{
         
     grid-column: 3;
     grid-row: 5;
-}
+} */
+
+
