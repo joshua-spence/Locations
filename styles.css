@@ -14,7 +14,13 @@ body{
     border: solid black;
     outline: none;
 }
-
+.search-box-add{
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 50px;
+    border: solid black;
+    outline: none;
+}
 .form-input{
     position: relative;
     margin: 0 auto;
