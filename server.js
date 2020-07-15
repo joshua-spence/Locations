@@ -1,8 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-
-
+const user_coordinates = require('./public/getLocation');
 
 
 //express app
@@ -13,6 +12,8 @@ app.set('view engine', 'ejs')
 
 //middleware & static files 
 app.use(express.static('public'));
+//passes JSON files
+app.use(express.json({limit:'1mb'}));
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -34,7 +35,7 @@ app.get('/index', (req, res) => {
 //Looks for data in the databse to print to add page
 var obj = {};
 app.get('/results', (req, res) => {
-    const sql = 'SELECT town, postcode FROM location';
+    const sql = 'SELECT lat, lng FROM location';
 
     db.query(sql, (err, result) => {
         if(err) throw err;
@@ -56,5 +57,12 @@ app.post('/add', (req, res) => {
   });
 
 });
+
+var obj2 = {}
+app.post('/results', (req, res) => {
+    obj2 = {user: req.body};
+    console.log(req.body);
+    res.render('results', obj2);
+})
 
 app.listen(3000, () => console.log('Server started'));

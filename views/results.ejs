@@ -15,21 +15,26 @@
     </nav>
     
    
-    <div class="location-results">
-        <% locations.forEach(loc => {%>
 
-            <h2><%= loc.town %> </h2>
-            <h3><%= loc.postcode %> </h3>
-            <p><%  %> </p>
+    <div class="location-results">
+        <% locations.forEach( (loc) => {%> 
+            <h1><%= loc.lat %></h1>
+            <h2><%= loc.lng %></h2>
         <%});%>
+
+        <% user.forEach( (us) => {%> 
+            <h1><%= us.lat %></h1>
+            <h2><%= us.lng %></h2>
+        <%});%>
+
+        
     </div>
     
-
     
 
 
+    <script src="/getLocation.js"></script>
+    <script src="/home.js"></script>
 
-    <script src="../scripts/getLocation.js"></script>
-    <script src="../scripts/home.js"></script>
 </body>
 </html>
